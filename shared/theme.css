@@ -146,6 +146,28 @@ a {
   color: var(--cor-primaria);
 }
 
+/* Faixa clicável exibida quando o cardápio muda com a página já aberta */
+.aviso-atualizacao {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  border: none;
+  padding: 0.65rem 1rem;
+  background: var(--cor-primaria);
+  color: var(--cor-secundaria);
+  font-family: var(--fonte);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.aviso-atualizacao:hover {
+  opacity: 0.9;
+}
+
 .estado-vazio,
 .estado-erro {
   padding: 2rem 1rem;

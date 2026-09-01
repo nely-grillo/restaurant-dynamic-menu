@@ -148,13 +148,40 @@ export function renderMenu(config, menu, root) {
   root.appendChild(rodape);
 }
 
-/** Busca config.json + menu.json relativos à página atual e renderiza no elemento root. */
+const INTERVALO_VERIFICACAO_MS = 60_000;
+
+// Query string única a cada chamada: evita que o CDN do GitHub Pages ou o
+// cache do navegador sirvam uma versão antiga de config.json/menu.json
+// durante a verificação periódica.
+function buscarDados() {
+  const cacheBuster = `?_=${Date.now()}`;
+  return Promise.all([
+    fetch(`./config.json${cacheBuster}`, { cache: 'no-store' }).then((r) => r.json()),
+    fetch(`./menu.json${cacheBuster}`, { cache: 'no-store' }).then((r) => r.json()),
+  ]);
+}
+
+function criarAvisoAtualizacao(root, onClick) {
+  const aviso = document.createElement('button');
+  aviso.type = 'button';
+  aviso.className = 'aviso-atualizacao';
+  aviso.textContent = 'Cardápio atualizado — toque para ver as novidades';
+  aviso.addEventListener('click', onClick);
+  root.prepend(aviso);
+  return aviso;
+}
+
+/**
+ * Busca config.json + menu.json relativos à página atual e renderiza no
+ * elemento root. Depois de carregado, passa a verificar periodicamente se
+ * houve mudança (cliente com a aba já aberta) e mostra um aviso clicável em
+ * vez de re-renderizar sozinho, para não interromper quem já está lendo.
+ */
 export async function carregarERenderizarCardapio(root) {
+  let dadosAtuais;
   try {
-    const [config, menu] = await Promise.all([
-      fetch('./config.json').then((r) => r.json()),
-      fetch('./menu.json').then((r) => r.json()),
-    ]);
+    const [config, menu] = await buscarDados();
+    dadosAtuais = { config, menu };
     renderMenu(config, menu, root);
   } catch (err) {
     root.innerHTML = '';
@@ -163,5 +190,30 @@ export async function carregarERenderizarCardapio(root) {
     erro.textContent = 'Não foi possível carregar o cardápio no momento.';
     root.appendChild(erro);
     console.error('Erro ao carregar cardápio:', err);
+    return;
   }
+
+  let aviso = null;
+  let dadosPendentes = null;
+
+  setInterval(async () => {
+    try {
+      const [config, menu] = await buscarDados();
+      const dadosNovos = { config, menu };
+      if (JSON.stringify(dadosNovos) === JSON.stringify(dadosPendentes || dadosAtuais)) return;
+
+      dadosPendentes = dadosNovos;
+      if (!aviso) {
+        aviso = criarAvisoAtualizacao(root, () => {
+          renderMenu(dadosPendentes.config, dadosPendentes.menu, root);
+          dadosAtuais = dadosPendentes;
+          dadosPendentes = null;
+          aviso = null;
+        });
+      }
+    } catch (err) {
+      // Falha silenciosa: mantém o cardápio já carregado na tela e tenta de novo no próximo ciclo.
+      console.error('Erro ao verificar atualização do cardápio:', err);
+    }
+  }, INTERVALO_VERIFICACAO_MS);
 }
