@@ -34,17 +34,17 @@
       "id": "exemplo-1004",
       "nome": "Frango grelhado com legumes",
       "descricao": "Peito de frango grelhado, legumes salteados e arroz",
-      "preco": 38.0,
+      "preco": 38,
       "categoria": "Pratos principais",
       "imagem": "",
-      "disponivel": false,
-      "atualizadoEm": "2026-08-31T12:00:00Z"
+      "disponivel": true,
+      "atualizadoEm": "2026-09-01T21:06:12.522Z"
     },
     {
       "id": "exemplo-1005",
       "nome": "Pudim de leite",
       "descricao": "Pudim caseiro com calda de caramelo",
-      "preco": 14.0,
+      "preco": 14,
       "categoria": "Sobremesas",
       "imagem": "assets/pudim-de-leite.webp",
       "disponivel": true,
