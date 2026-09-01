@@ -34,17 +34,17 @@
       "id": "exemplo-1004",
       "nome": "Frango grelhado com legumes",
       "descricao": "Peito de frango grelhado, legumes salteados e arroz",
-      "preco": 38.0,
+      "preco": 38,
       "categoria": "Pratos principais",
       "imagem": "",
-      "disponivel": false,
-      "atualizadoEm": "2026-08-31T12:00:00Z"
+      "disponivel": true,
+      "atualizadoEm": "2026-09-01T21:06:12.522Z"
     },
     {
       "id": "exemplo-1005",
       "nome": "Pudim de leite",
       "descricao": "Pudim caseiro com calda de caramelo",
-      "preco": 14.0,
+      "preco": 14,
       "categoria": "Sobremesas",
       "imagem": "assets/pudim-de-leite.webp",
       "disponivel": true,
@@ -59,6 +59,16 @@
       "imagem": "assets/suco-fruta.webp",
       "disponivel": true,
       "atualizadoEm": "2026-08-31T12:00:00Z"
+    },
+    {
+      "id": "exemplo-1788297863449",
+      "nome": "Torresmo de rolo Tradicional",
+      "descricao": "O clássico dos botecos em sua melhor versão! Barriga de porco (panceta) selecionada, temperada na medida certa, enrolada e assada lentamente. Finalizada com uma fritura sob medida para garantir aquela pele pururucada, ultra crocante por fora e uma carne surpreendentemente suculenta por dentro. Acompanha gomos de limão fresco.",
+      "preco": 55,
+      "categoria": "Entradas",
+      "imagem": "assets/exemplo-1788297861537.jpeg",
+      "disponivel": true,
+      "atualizadoEm": "2026-09-01T21:24:23.449Z"
     }
   ]
 }
