@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Cardápio</title>
+  <link rel="stylesheet" href="../../shared/theme.css" />
+</head>
+<body>
+  <main id="cardapio"></main>
+
+  <script type="module">
+    import { carregarERenderizarCardapio } from '../../shared/menu-renderer.js';
+    carregarERenderizarCardapio(document.getElementById('cardapio'));
+  </script>
+</body>
+</html>

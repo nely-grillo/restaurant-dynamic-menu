@@ -1,0 +1,64 @@
+{
+  "pratos": [
+    {
+      "id": "exemplo-1001",
+      "nome": "Bolinho de bacalhau",
+      "descricao": "Porção com 6 unidades, servido com limão",
+      "preco": 28.9,
+      "categoria": "Entradas",
+      "imagem": "assets/bolinho-de-bacalhau.avif",
+      "disponivel": true,
+      "atualizadoEm": "2026-08-31T12:00:00Z"
+    },
+    {
+      "id": "exemplo-1002",
+      "nome": "Pão de alho na chapa",
+      "descricao": "Pão artesanal com alho e manteiga de ervas",
+      "preco": 19.5,
+      "categoria": "Entradas",
+      "imagem": "assets/pao-de-alho-na-chapa.jpg",
+      "disponivel": true,
+      "atualizadoEm": "2026-08-31T12:00:00Z"
+    },
+    {
+      "id": "exemplo-1003",
+      "nome": "Feijoada completa",
+      "descricao": "Feijoada com arroz, couve, farofa e laranja",
+      "preco": 45.9,
+      "categoria": "Pratos principais",
+      "imagem": "assets/feijoada.webp",
+      "disponivel": true,
+      "atualizadoEm": "2026-08-31T12:00:00Z"
+    },
+    {
+      "id": "exemplo-1004",
+      "nome": "Frango grelhado com legumes",
+      "descricao": "Peito de frango grelhado, legumes salteados e arroz",
+      "preco": 38.0,
+      "categoria": "Pratos principais",
+      "imagem": "",
+      "disponivel": false,
+      "atualizadoEm": "2026-08-31T12:00:00Z"
+    },
+    {
+      "id": "exemplo-1005",
+      "nome": "Pudim de leite",
+      "descricao": "Pudim caseiro com calda de caramelo",
+      "preco": 14.0,
+      "categoria": "Sobremesas",
+      "imagem": "assets/pudim-de-leite.webp",
+      "disponivel": true,
+      "atualizadoEm": "2026-08-31T12:00:00Z"
+    },
+    {
+      "id": "exemplo-1006",
+      "nome": "Suco natural da fruta",
+      "descricao": "Laranja, maracujá ou limão",
+      "preco": 9.5,
+      "categoria": "Bebidas",
+      "imagem": "assets/suco-fruta.webp",
+      "disponivel": true,
+      "atualizadoEm": "2026-08-31T12:00:00Z"
+    }
+  ]
+}

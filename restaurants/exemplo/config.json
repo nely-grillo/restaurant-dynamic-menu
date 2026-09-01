@@ -1,0 +1,14 @@
+{
+  "slug": "exemplo",
+  "nome": "Sabor Caseiro",
+  "descricao": "Comida caseira todos os dias",
+  "logo": "assets/logo.svg",
+  "banner": "assets/banner.svg",
+  "tema": {
+    "corPrimaria": "#8B0000",
+    "corSecundaria": "#FFF8E7",
+    "corTexto": "#222222",
+    "fonte": "'Poppins', sans-serif"
+  },
+  "categorias": ["Entradas", "Pratos principais", "Sobremesas", "Bebidas"]
+}

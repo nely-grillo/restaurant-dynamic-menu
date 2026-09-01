@@ -1,0 +1,161 @@
+/*
+  Estilos base do cardápio público.
+  As variáveis abaixo são valores padrão; cada restaurante sobrescreve
+  --cor-primaria / --cor-secundaria / --cor-texto / --fonte em tempo de
+  execução (ver shared/menu-renderer.js -> applyTheme), a partir do
+  config.json do próprio restaurante.
+*/
+
+:root {
+  --cor-primaria: #8B0000;
+  --cor-secundaria: #FFF8E7;
+  --cor-texto: #222222;
+  --fonte: 'Poppins', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  background: var(--cor-secundaria);
+  color: var(--cor-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* Cabeçalho: logo + nome + descrição do restaurante */
+.restaurante-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1rem;
+}
+
+.restaurante-header__logo {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--cor-primaria);
+  flex-shrink: 0;
+}
+
+.restaurante-header__texto h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--cor-primaria);
+}
+
+.restaurante-header__texto p {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Banner opcional no topo */
+.restaurante-banner {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+}
+
+/* Categorias e grid de pratos */
+.categoria {
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.categoria__titulo {
+  color: var(--cor-primaria);
+  border-bottom: 2px solid var(--cor-primaria);
+  padding-bottom: 0.35rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.pratos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+@media (min-width: 560px) {
+  .pratos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .pratos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.prato-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.prato-card__imagem {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: var(--cor-secundaria);
+}
+
+.prato-card__corpo {
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.prato-card__nome {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.prato-card__descricao {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  flex: 1;
+}
+
+.prato-card__preco {
+  margin: 0;
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+.estado-vazio,
+.estado-erro {
+  padding: 2rem 1rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.rodape {
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  padding: 2rem 1rem 1.5rem;
+}

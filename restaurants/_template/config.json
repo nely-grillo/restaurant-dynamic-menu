@@ -1,0 +1,14 @@
+{
+  "slug": "novo-restaurante",
+  "nome": "Nome do Restaurante",
+  "descricao": "",
+  "logo": "assets/logo.png",
+  "banner": "",
+  "tema": {
+    "corPrimaria": "#8B0000",
+    "corSecundaria": "#FFF8E7",
+    "corTexto": "#222222",
+    "fonte": "'Poppins', sans-serif"
+  },
+  "categorias": ["Entradas", "Pratos principais", "Sobremesas", "Bebidas"]
+}
